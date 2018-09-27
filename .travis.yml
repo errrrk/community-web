@@ -7,6 +7,8 @@ cache:
   - node_modules
 script:
 #- npm test
+- ls -lag
+- ls -lag src/
 - npm run-script build
 services:
 - docker
