@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.com/errrrk/community-web.svg?branch=master)](https://travis-ci.com/errrrk/community-web)
+[![Build Status](https://travis-ci.org/errrrk/community-web.svg?branch=master)](https://travis-ci.org/errrrk/community-web)
 
 ## Build docker image
 
