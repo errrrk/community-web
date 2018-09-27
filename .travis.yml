@@ -1,28 +1,30 @@
 sudo: required
 language: node_js
+services:
+- docker
 node_js:
-- "stable"
+- stable
 cache:
   directories:
   - node_modules
-script:
-#- npm test
-- ls -lag
-- ls -lag src/
-- ls -lag src/routes/
-- npm run-script build
-services:
-- docker
-#before_install:
-#- docker build -t errrrk/community-web .
-#- echo $DOCKER_PASSWORD | docker login -u $DOCKER_USER --password-stdin
-#- docker build -f Dockerfile -t $REPO:latest . --build-arg branch=$TRAVIS_TAG
-#- docker tag $REPO:latest $REPO:$TRAVIS_TAG
-#- docker push $REPO
-#deploy:
-#  provider: surge
-#  skip_cleanup: true
-#  domain: <my_name_here>.surge.sh
-#  project: ./build/
-on:
+env:
+  global:
+  - secure: FbC3e2BZ6QOXFvYBItGQ5oDo6YxiBuSay2LSz3ueU25Hwfednp3Vl87ouALvSnLIdxwaAOHQaR8B4dQlc1yIVqy6p+jaHZy24BEHtiAubNJ5SgMb5XfHxGvdWhc3JwMYiqF4UOdH6pl0GpYH3hyQa6xGxmEsfIQtREc8836tfEiqyV4OOPUWeelk1ptqk631WRvkBOy31W0wivyJRMEKdrzIpzAuNRCC80bRjPNU0Ka8SbbiRi8BMdxITuukJb8S2Jk/TM5QrtJCTs8MGuSokiBZJfzBZz8tW3KVhBw6AxZBh8s9L4Drpt4HbLoWn+GclJYUdwpIcKulh69Lk7F6CX7tFWOIPi6ZkygG7ryid3AzjQCfPIow0Q96ViihRs4uIzPHUAUPLmmU4Vq+tb57Ubxv/EM+o1hf4bpMdbXm40rhF+SdeMZcRSEXO5SCIShEOjcSWWxvXoAqIQlbd16EPv27XiIGGzL0H4bi17e+ignSY1vEfGH0DDMLz9k0U6Oqm+TZ0FGIyxThiv1vIDGytr7gkBJxOqR+PtBBk1+s4llUDOZCuGgtmEQfVE4KRm2HPtGwiV3b7SC9DxrqnevUlAq08Zp17Oh5NwMlroJ7nmVmXBuc7zpQxrK1CNknJ6G6wdmAxoiausrsLcjmNelM68KsLhtQo6hBOco+0HCK1rY= # DOCKER_EMAIL
+  - secure: dI+KOSn1yWhIXBWh1nJyGju9DtoWMovAZQuUYkqk3OVgVXS+GPhE88LhEtKYIvRR74DAnG2blDYDF0goTL03GsBF58YB3b392BbFRC/yNugQALCyfxBXDnCirrjP9STaYj/KLqM+uoVOuDjcRKYDJAe1Au/Ri4hBj8Yby6XsN8VNZkucfDc1gpxjflROJ9bDYYFsRlImdcocLxAOtMy/BWs8eWhXqaYAFsA9GwEef30VEA7ngli6AAbI5CLz2c7LBMDa/2YN8X15NPegG6dcRO2CuuAQte+FAzanKhU6TbODslYGTMVVVwEfDVvnM7PmGATxPzhbvxxcFMBKGcYlmnZ4vCodlBLvxC1RhZQdiisUbbOUYdc6EkNAmXhdW/K+MV2rUvdTprAPXJgut9UKDwGpXCsnb24k2sjKgNsPh5qjRg3OzFhsV7wIfjNi7CDLn5HQoPrh/qyuv6iKPfKIpEzWypLRNj+gpdWvJcjDPCxVBVxupNNgsVHiERniHF4opb2/yuVncQEIgRAKUs7OaX82Z08pAMu4ZCxcH9dSFWgFNVcNhzqpXIv47Zkcmba+QWrF3OWdNREzeE5Zq1BIgRQBaXqmigQ6Sn/GT+97qC+B/ofdnIyKNjtzkcoL4bPltnyZdTo/vyvUKzXrkTonxfnBC3TlTdVyBA0San1Yi/s= # DOCKER_USER
+  - secure: gr/MzQpfQYYUlnhPGq3r/SvgZYAUYPGWQPK7gNtp+BDaOYDePT9iAIpPU0hfJAsxNSTTQ70MKk6pNfaiXvQdflViiy8fj1Nncz3pPBKW1DsVKEYs+oTg9EKMsPgF8Vl/QJAvIbVPAc2CQA2s8mNLeEq8FdFYvaN1VbIOLSrkqUitfzsermE6jP0268vtpijQdFbqTQHhSmSEvTiM9R9VX8U5+Qx3zWZc1jhvoaAhQ7/r984dllc8NVI1+5a6wiL9rft8HvhkL/FcSkinHsFn18lZG9CMtkVm9/7jklJlA8AHYSES6pdGJv7yB2KiU9SSLT4BcRekmj2wWlyIofOsrOfD3wO2Be8Z5ySR9ApuxHuv1RTMMDoQWuVYf08Keo8zi5v1ETNBoRBsl7U82ZlM26ocGSkjVcWqmN0skAUC670rmKj2SP0xBqiZZb4mh2TnERQPw+1ovGAEMbg0qjIaqUVX+iUNUDItw1LCJE7QVZkyzoisZozyygjtxf+ZIyr32r5dXCid6YlL5Wd/RLbfHykcQxk+0d68zmnaHXJnWjZqQrAam68cFneggWKCUd3kVI0TEi+YjBAKAWVekp6coeH9fLSmGotiuckt2Z1hyo/MWi2xwFZ+rVdokuGbh4GAFmlHQDh+Uc6rzj++VpvOpgh8aEjliKy33gHyI0sxwsY= # DOCKER_PASS
+  - COMMIT=${TRAVIS_COMMIT::7}
+jobs:
+  include:
+  - stage: production build
+    script:
+    - npm test
+    - npm run-script build
+    - docker login -u $DOCKER_USER -p $DOCKER_PASS
+    - export REPO=errrrk/community-web
+    - export TAG=`if [ "$TRAVIS_BRANCH" == "master" ]; then echo "latest"; else echo $TRAVIS_BRANCH ; fi`
+    - docker build -f Dockerfile -t $REPO:$COMMIT .
+    - docker tag $REPO:$COMMIT $REPO:$TAG
+    - docker tag $REPO:$COMMIT $REPO:travis-$TRAVIS_BUILD_NUMBER
+    - docker push $REPO
+true:
   branch: master
