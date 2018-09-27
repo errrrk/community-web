@@ -28,3 +28,9 @@ jobs:
     - docker push $REPO
 true:
   branch: master
+notifications:
+  slack:
+    rooms:
+    - secure: Swclk0eUe1HJ2YkFVSSm5dQCSMcdUymoZIP8M5CqJLigpxDkIhyXnfr9ohSQjb396YcSNst+ttJvKLiPGsZ48GpybUhoL4C+B+3NGHa2tGkitA5NR5o9XH5Ftw0UW8BBZaRGm/VGzNujZUHx2mxiWebRzL2xtmBUAFVn/eruQUnZyZZmDTLio1EkfMdET+7Wizgh5Y8TunaB6V1ln8hWJZT4ylj3LvzIkQ3Kp/w9TFByJhYB5xrnzfoO8bekyBQJvcaMbynEuG+tAxYdnC4qrzpDYdnKsPO4cmt6S8TlF+pBGkPcr7qchnBoh6xRSUrJG/SjPcJJvxZmrUxPXuOZAvf8Gi1vJS4+i4gnvyoVE4p77tuR7qXqgZIR+i5dDJDSmcZOvVfER/4d+sbn/4gHcppMFB6/NW4a81R4BbF7x7xIH2MWSF8BtYBZT/Tl6CZtL2mBA/v6dTzXeRK6IvgikzyTtHYFNgzbJWWkK22SY4AN+fgbuwU9FVYQTK6vVpBlV8YSsA3J2cEy2DUKslfb5jrH4EpEGB7MDJJeE5Bwe+JsSvo5CF+x2Jb7N9/8cagfornlo3DtkhUZcknC+upUJX23p8NXFhi94PSbPbXk4WedY+hWIU3pEL9RTCS6/D61AiWKEWEopCG2kW0ouXpP30UnxmXtSk98EOQ2MphPUfo=
+    on_success: always
+    on_failure: always
