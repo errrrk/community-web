@@ -1,0 +1,25 @@
+sudo: required
+language: node_js
+node_js:
+- "stable"
+cache:
+  directories:
+  - node_modules
+script:
+- npm test
+- npm run build
+services:
+- docker
+#before_install:
+#- docker build -t errrrk/community-web .
+#- echo $DOCKER_PASSWORD | docker login -u $DOCKER_USER --password-stdin
+#- docker build -f Dockerfile -t $REPO:latest . --build-arg branch=$TRAVIS_TAG
+#- docker tag $REPO:latest $REPO:$TRAVIS_TAG
+#- docker push $REPO
+#deploy:
+#  provider: surge
+#  skip_cleanup: true
+#  domain: <my_name_here>.surge.sh
+#  project: ./build/
+on:
+  branch: master
