@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.com/errrrk/community-web.svg?branch=master)](https://travis-ci.com/errrrk/community-web)
+
 ## Build docker image
 
 ```commandline
