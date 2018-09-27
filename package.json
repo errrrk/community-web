@@ -1,6 +1,6 @@
 {
   "name": "community-web",
-  "version": "1.2.0",
+  "version": "0.0.1",
   "private": true,
   "main": "dist/index.js",
   "dependencies": {

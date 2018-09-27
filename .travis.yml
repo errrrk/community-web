@@ -9,6 +9,7 @@ script:
 #- npm test
 - ls -lag
 - ls -lag src/
+- ls -lag src/routes/
 - npm run-script build
 services:
 - docker
